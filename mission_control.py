@@ -133,9 +133,7 @@ def gerar_recomendacao(pontuacao_ciclo, temp, com, bat, oxi, est):
     if analisar_bateria(bat)[0] == 1:      recomendacoes.append( "Niveis de energia em estado de atenção.")
     if analisar_oxigenio(oxi)[0] == 1:     recomendacoes.append( "Niveís de oxigenio em estado de atenção.")
     if analisar_estabilidade(est)[0] == 1: recomendacoes.append( "Atenção, nave apresentando instabilidade.")
-    if 3 <= pontuacao_ciclo <= 5:
-        return "Monitorar sistemas em atenção e preparar plano de contingência."
-
+    return "\n".join(recomendacoes)
 
 
 def gerar_relatorio_final(ciclos):
